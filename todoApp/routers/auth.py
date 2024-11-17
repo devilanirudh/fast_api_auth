@@ -87,6 +87,7 @@ async def create_user(db:db_dependency,create_user_request:CreateUserRequest):
         hashed_password = bcrypt_context.hash(create_user_request.password),
         is_active = True
     )
+    print(type(Users.hashed_password))
 
     db.add(create_user_model)
     db.commit()
